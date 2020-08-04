@@ -1,4 +1,4 @@
-# tdd-vue
+# VUE ATOMIC DESIGN TEMPLATE
 
 ## Project setup
 ```
