@@ -1,0 +1,75 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "API Title",
+    "version": "1.0"
+  },
+  "servers": [{ "url": "https://localhost:7777/v1" }],
+  "components": {
+    "schemas": {
+      "Result": {
+        "type":"number"
+      }
+    }
+  },
+  "paths": {
+    "/benchmark/totalUnits/{period}": {
+      "get": {
+        "description": "total units per period",
+        "parameters": [
+          {
+            "name": "period",
+            "in": "query",
+            "description": "Period of time",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A total of units for that period",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/benchmark/expectedUnits/{period}": {
+      "get": {
+        "description": "total units per period",
+        "parameters": [
+          {
+            "name": "period",
+            "in": "query",
+            "description": "Period of time",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A total of units for that period",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
